@@ -35,6 +35,45 @@ fi = (function() {
       }
     },
 
+    filter: function(collection, predicate) {
+      const newCollection = [];
+      for(let i = 0; i < collection.length; i++){
+        if (predicate(collection[i])){
+          newCollection.push(collection[i]);
+        }
+      }
+      return newCollection;
+    },
+
+    size: function(collection) {
+      let values = Object.values(collection);
+      let i = 0;
+        while (values[i++]) {
+        }
+        return i - 1;
+    },
+
+    first: function(array, n=1){
+      let newArray = [];
+      if (n > 1){
+        for(let i = 0; i < n; i++){
+          newArray.push(array[i]);
+        }
+        return newArray;
+      } else {
+        return array[0];
+      }
+    },
+
+    last: function(array, n=1){
+      let newArray = [];
+      if (n > 1){
+        return array.slice(-n);
+      } else {
+        return array.slice(-1)[0];
+      }
+    },
+
     functions: function() {
 
     },
