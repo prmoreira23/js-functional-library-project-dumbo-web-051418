@@ -89,6 +89,20 @@ fi = (function() {
       });
     },
 
+    uniq: function(array, isSorted, iteratee=(n)=>n){
+      let transformations = [];
+      let result = [];
+        for (let i = 0; i < array.length; i++){
+           let transformation = iteratee(array[i]);
+           if (!transformations.includes(transformation)){
+             transformations.push(transformation);
+             result.push(array[i]);
+           }
+        }
+        return result;
+    },
+
+
     functions: function() {
 
     },
