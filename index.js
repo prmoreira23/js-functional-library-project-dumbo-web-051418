@@ -82,12 +82,11 @@ fi = (function() {
 
     sortBy: function(collection, iteratee) {
       let newArray = collection.slice();
-      newArray.map(function(item){
+      return newArray.map(function(item){
         return iteratee(item);
       }).sort(function(a, b){
         return a - b;
       });
-      return newArray;
     },
 
     functions: function() {
