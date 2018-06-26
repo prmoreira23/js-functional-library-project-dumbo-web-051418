@@ -74,6 +74,22 @@ fi = (function() {
       }
     },
 
+    compact: function(collection) {
+      return this.filter(collection, function(element){
+        return !!element;
+      });
+    },
+
+    sortBy: function(collection, iteratee) {
+      let newArray = collection.slice();
+      newArray.map(function(item){
+        return iteratee(item);
+      }).sort(function(a, b){
+        return a - b;
+      });
+      return newArray;
+    },
+
     functions: function() {
 
     },
